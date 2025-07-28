@@ -22,3 +22,22 @@ def get_char_occurances(text):
         else:
             char_count[char] = 1
     return char_count
+
+
+def sort_on(item):
+    return item["num"]
+
+
+def sort_char_dict(input_dict):
+    # 1.interate through the keys in the dictionary
+    # 2.for each key, turn them into a mini dictionary
+    # 3. add them to a list
+
+    dictionary_list = []
+
+    for key in input_dict:
+        singe_dict = {"char": key, "num": input_dict[key]}
+        dictionary_list.append(singe_dict)
+    # sort the dictionary_list from greatest to smallest by count
+    dictionary_list.sort(reverse=True, key=sort_on)
+    return dictionary_list
